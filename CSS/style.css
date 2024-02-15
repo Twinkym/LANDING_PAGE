@@ -27,12 +27,25 @@ a.nav-link:hover {
 header {
     width: 100%;
     min-height: 800px;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
     transition: background-color .5s, color .5s;
 }
 
-header .col-md-5 text-white mt-4 ms-5 {
+header div.row{
+    height: 100%;
+    align-items: center;
+    justify-content: right;
+
+}
+
+header .col-md-5 text-black mt-4 ms-5 {
     font-size: 20px;
     z-index: 999;
+}
+
+h1.fw-normal, p{
+    color: black !important;
 }
 
 .img-fluid {
@@ -102,7 +115,7 @@ header.scroll-header {
 .btn-custom {
     border: 1.5px solid #fff;
     border-radius: 50px;
-    color: #fff;
+    color: #000;
     background: none;
     padding: 8px 20px;
     font-weight: 500;
