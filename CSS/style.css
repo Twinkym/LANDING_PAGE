@@ -98,7 +98,7 @@ header.scroll-header {
     content: " ";
     position: absolute;
     width: 100%;
-    height: calc(100% + 1.73em);
+    height: calc(100% + 1em);
     /* Adding extra to account for the baseline offset */
     left: 0;
     bottom: 0;
@@ -107,6 +107,7 @@ header.scroll-header {
     background-size: cover;
     z-index: -1;
 }
+
 
 /* End  Wave Section */
 
@@ -151,3 +152,33 @@ section {
     margin: auto;
     color: #aab7c4;
 }
+
+
+.table{
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.table .thead {
+    display: table-header-group;
+    width: 100%;
+    float: left; /* Making it inline with the flow of the document */
+    overflow: visible !important; /* Overriding the previous hiding of headers in IE*/
+}
+
+.table th {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: bold;
+    color: #090979;
+    border: 2px solid #000;     
+}
+.table td, .table th, .table tr{  
+    text-align: center;
+    border: 2px dashed #090979;
+}
+
