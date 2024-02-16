@@ -26,26 +26,30 @@ a.nav-link:hover {
 
 header {
     width: 100%;
-    min-height: 800px;
+    min-height: 1000px;
     display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 150px;
+    position: relative;
+    overflow: hidden;
     font-family: 'Poppins', sans-serif;
     transition: background-color .5s, color .5s;
 }
 
-header div.row{
-    height: 100%;
-    align-items: center;
-    justify-content: right;
-
-}
-
-header .col-md-5 text-black mt-4 ms-5 {
-    font-size: 20px;
-    z-index: 999;
-}
-
-h1.fw-normal, p{
+h1.fw-normal{
+    bottom: 300px !important;
+    position: absolute;
+    text-align: left;
+    max-width: 60%;
     color: black !important;
+}
+
+p {
+    line-height: 1.8;
+    letter-spacing: -0.05em;
+    color: #000;
 }
 
 .img-fluid {
@@ -55,11 +59,6 @@ h1.fw-normal, p{
 
 /*  End of Header Styles */
 
-/* Color Background Animation for NavBar on Scroll */
-header.scroll-header {
-    color:  rgba(0, 0, 0, 0.6);
-}
-
 .navbar-fixed {
     background: rgba(2, 2, 186, 0.811);
     padding-top: 0;
@@ -68,15 +67,20 @@ header.scroll-header {
     box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.4);
 }
 
-.navbar-fixed.scroll-header {
-    color: #000;
-}
 /* End of   Color Background Animation */
+
+header .container-text-header{
+    width: 100%;    
+}
 
 /* Wave section */
 .wave {
+    display: flex;
     position: relative;
-    padding-top: 10rem;
+    width:  100%;
+    overflow: hidden;
+    transform: translateY(-15%);
+    padding-top: 0;
     background: rgb(2, 0, 36);
     background: -moz-linear-gradient(125deg,
             rgba(2, 0, 36, 1) 0%,
@@ -108,10 +112,7 @@ header.scroll-header {
     z-index: -1;
 }
 
-
 /* End  Wave Section */
-
-
 
 .btn-custom {
     border: 1.5px solid #fff;
@@ -182,3 +183,48 @@ section {
     border: 2px dashed #090979;
 }
 
+#html5{
+    color: #3b26df;
+}
+
+#css3{
+    color: #B197FC;
+}
+
+#sql{
+    color: #74C0FC;
+}
+
+#bootstrap{
+    color: #2519d2;
+}
+
+#sass{
+    color: #B197FC;
+}
+
+#java{
+    color: #B197FC;
+}
+
+#node{
+    color: #25d061;
+}
+
+#js{
+    color: #FFD43B;
+}
+
+#react{
+    color: #74C0FC;
+}
+
+section .Personal-card{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    padding: 5% 0;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+}
