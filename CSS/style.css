@@ -1,4 +1,12 @@
-/*  Navbar styles */
+@import "./animations.css";
+@import "./variables.css";
+
+/*!
+ * Bootstrap v4.3.1 (https://getbootstrap.com)
+ * Copyright 2011-2019 The Bootstrap Authors
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+/* Start of Navbar styles */
 .navbar .nav-link.scroll-nav-link {
     max-height: max-content;
     color: rgba(0, 0, 0, 1);
@@ -6,9 +14,9 @@
 }
 
 .navbar .nav-link {
-    color: #000;
-    background-color: rgba(2, 2, 186, 0.2);;
-    box-shadow: 1px 2px #aab7c4 ;
+    color: var(--color-basic-text);
+    background-color: var(--color-navbar-background);
+    box-shadow: 1px 2px var(--color-button-box-shadow);
     border: unset;
     border-radius: 5px;
     margin-right: 29px;
@@ -17,12 +25,12 @@
 
 a.nav-link:hover {
     padding-bottom: 1px;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid var(--color-border-bottom-button);
 }
 
 /* End  of navbar styles */
 
-/*  Header  Styles*/
+/* Start of Header  Styles*/
 
 header {
     width: 100%;
@@ -43,7 +51,12 @@ h1.fw-normal{
     position: absolute;
     text-align: left;
     max-width: 60%;
-    color: black !important;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    opacity: 0;
+    transform: translateY(-20%);
+    animation: fadeInUp 1s ease-in-out both;
+    animation-delay: .8s;
 }
 
 p {
@@ -57,7 +70,9 @@ p {
     height: auto !important;
 }
 
-/*  End of Header Styles */
+/* End of Header Styles */
+
+/* Start of NavBar Color Background Animation */
 
 .navbar-fixed {
     background: rgba(2, 2, 186, 0.811);
@@ -67,13 +82,13 @@ p {
     box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.4);
 }
 
-/* End of   Color Background Animation */
+/* End of Navbar Color Background Animation */
 
 header .container-text-header{
     width: 100%;    
 }
 
-/* Wave section */
+/* Start of Wave section */
 .wave {
     display: flex;
     position: relative;
@@ -112,8 +127,9 @@ header .container-text-header{
     z-index: -1;
 }
 
-/* End  Wave Section */
+/* End of Wave Section */
 
+/* Start of Button Works Section */
 .btn-custom {
     border: 1.5px solid #fff;
     border-radius: 50px;
@@ -130,6 +146,10 @@ header .container-text-header{
     border: 1.5px solid #090979;
     color: #fff;
 }
+
+/* End of Button Works Section */
+
+/* Start of About Section */
 
 section {
     padding: 82px 0;
@@ -154,6 +174,25 @@ section {
     color: #aab7c4;
 }
 
+/*  End of About Section */
+/* Start of Skills Table Section */
+
+section #skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.skills-tech-title {
+    color:  #5d6d7e;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 30px;
+    text-transform: uppercase;
+    opacity: .7;
+}
 
 .table{
     width: 100vw;
@@ -182,6 +221,9 @@ section {
     text-align: center;
     border: 2px dashed #090979;
 }
+/* End Of Skills Table  Section */
+
+/* Start of Image Badges Colors Section */
 
 #html5{
     color: #3b26df;
@@ -219,6 +261,18 @@ section {
     color: #74C0FC;
 }
 
+/* End Of Image Badge Colors Section */
+
+/* Start of Personal Information Section */
+.personal-info {
+    font-size: 1.25em;
+    text-align: center;
+}
+
+.name {
+    margin-bottom: .5rem;
+}
+
 section .Personal-card{
     display: flex;
     justify-content: space-around;
@@ -227,4 +281,116 @@ section .Personal-card{
     padding: 5% 0;
     box-sizing: border-box;
     padding-bottom: 30px;
+}
+
+/*  End of Personal Information Section */
+
+@media (min-width: 994px) and (max-width: 1200px) {  
+    /* Make the menu bar appear above everything when on a smaller device */
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+    }
+
+    section .Personal-card {
+        flex-direction: column;
+        max-width: 60%;
+        margin: auto;
+        padding-top: 7vh;
+    }
+    
+    #contactBtn, #resumeBtn {
+        width: 80%;
+        margin: 10px auto;
+    }
+}
+
+@media (min-width: 768) and (max-width: 992px){ 
+    /* Stack contact methods vertically on medium screens */
+    .contact-methods {
+        flex-direction: column;
+    }
+
+    .contact-method {
+        margin-top: 1.5em;
+    }
+}
+
+/* mobile */
+@media all and (max-device-width: 480px) {  
+    /* Hide elements that don't fit on small screens */
+    body {
+        font-size: 1em;
+    }
+
+    h1 {
+        font-weight: normal;
+    }
+
+    header {
+        display: none;
+    }
+
+    section {
+        padding: 3em 1em;
+    }
+
+    #email a, #phone a {
+        display: block;
+        text-align: center;
+    }
+
+    #email a:before, #phone a:before {
+        content: "Email: ";
+    }
+
+    #address :not(h2):first-child, #phone :not(h2):first-child {
+        margin-bottom: 1em;
+    }
+
+    #social ul li {
+        display: inline-block;
+        list-style: none;
+        vertical-align: top;
+        margin-right: 1em;
+    }
+
+    #social img {
+        width: 50%;
+    }
+
+/* Make the page fit better on mobile */
+@media screen and (max-width: 480px) {
+    body {
+        background: #fff;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .container {
+        margin: 0;
+        max-width: 90vw;
+        padding: 1em;
+    }
+    
+    /* Put social media links underneath each other instead of side by side */
+    #social ul li {
+        display: block;
+        float: none;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    #social img {
+        width: auto;
+        height: 50%;
+    } 
+    
+}
+
 }
